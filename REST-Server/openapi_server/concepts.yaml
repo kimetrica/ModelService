@@ -1,0 +1,25 @@
+malnutrition_model:
+  variables:
+    - name: gam_rate
+      description: Moderate Malnutrition rate (percentage of the sub population < 5yrs)
+      metadata:
+        unit: weight-for-height z-score
+      concepts:
+        - UN/entities/human/health/nutrient
+        - UN/entities/food_availability
+        - UN/entities/human/financial/economic/poverty
+    - name: sam_rate
+      description: Acute malnutrition rate (percentage of the sub population < 5yrs)
+      metadata:
+      concepts:
+        - UN/entities/human/health/nutrient
+        - UN/entities/food_availability
+        - UN/entities/human/financial/economic/poverty        
+
+population_model:
+  variables:
+    - name: current_pop
+      description: Population estimate
+      metadata:
+      concepts:
+        - UN/entities/human/population
