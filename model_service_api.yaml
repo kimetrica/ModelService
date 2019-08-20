@@ -158,8 +158,8 @@ paths:
     get:
       tags:
       - "concepts"
-      summary: "Get basic metadata information for a specified model."
-      description: "Submit a model name and receive metadata information about the model, such as its purpose, who maintains it, and how it can be run."
+      summary: "Get model output variables related to a concept."
+      description: "Submit a concept name and receive an array of model output variables related to that concept."
       parameters:
       - in: path
         name: Concept
