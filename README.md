@@ -10,6 +10,10 @@ This repository contains the Models as a Service (MaaS) API for World Modelers.
 	- [Swagger Editor](#swagger-editor)
 	- [Open API Code Generation](#open-api-code-generation)
 	- [Running the REST Server](#running-the-rest-server)
+- [Usage](#usage)
+    - [Exploration](#exploration)
+    - [Concepts](#concepts)
+    - [Execution](#execution)
 
 ## Design
 
@@ -105,3 +109,63 @@ OUTPUT_PATH = /home/ubuntu/ModelService/results/fsc/outputs
 ```
 
 However you must ensure that this location is readable and writable by the process running the server. Results will be written by the model's Docker container (which may be `root`) so you likely need to `sudo chmod -r +777 /home/ubuntu/ModelService/results` or something like that to ensure appropriate permissions are set.
+
+## Usage
+
+## Exploration
+
+Example queries for the `/search` endpoint can be somewhat complex so below are some example queries that could be run:
+
+### `/search`
+
+**GEO**
+
+```
+{
+   "query_type":"geo",
+   "result_type":"datasets",
+   "xmin": 33.9605286,
+   "xmax": 33.9895077,
+   "ymin": -118.4253354,
+   "ymax": -118.4093589
+}
+```
+
+**TEXT**
+
+```
+{
+   "query_type":"text",
+   "result_type":"datasets",
+   "term": "Country Name",
+   "type": "standard name"
+}
+```
+
+```
+{
+   "query_type":"text",
+   "result_type":"models",
+   "term": "food",
+   "type": "keyword"
+}
+```
+
+**TIME**
+
+```
+{
+   "query_type":"time",
+   "result_type":"models",
+   "start_time": "1960-01-01T00:00:00",
+   "end_time": "2019-01-01T23:59:59"
+}
+```
+
+## Concepts
+
+TODO
+
+## Execution
+
+TODO

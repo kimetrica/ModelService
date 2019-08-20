@@ -2,6 +2,7 @@ malnutrition_model:
   variables:
     - name: gam_rate
       description: Moderate Malnutrition rate (percentage of the sub population < 5yrs)
+      file_name: default
       metadata:
         unit: weight-for-height z-score
       concepts:
@@ -19,7 +20,24 @@ malnutrition_model:
 population_model:
   variables:
     - name: current_pop
+      file_name: default
       description: Population estimate
       metadata:
       concepts:
         - UN/entities/human/population
+
+fsc:
+  variables:
+    - name: dR
+      file_name: single_shock_results.csv
+      description: Change in reserve stocks
+      metadata:
+      concepts:
+        - UN/entities/food_availability
+    - name: dP
+      file_name: single_shock_results.csv
+      description: Change in crop production
+      metadata:
+      concepts:
+        - UN/entities/food_availability
+        - UN/events/human/agriculture/farming
