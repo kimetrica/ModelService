@@ -1,0 +1,17 @@
+version: "2.4"
+
+services:
+  api:
+    image: modelservice_api
+    build:
+      context: ${PWD}/REST-Server
+
+  nginx:
+    depends_on:
+      - api
+    image: nginx:1.14.0
+    ports:
+      - "80:80"
+    volumes:
+      - ${PWD}/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ${PWD}/htpasswd:/etc/apache2/.htpasswd:ro
